@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from os import environ
 
 app = Flask(__name__)
 from subarrays import subarrays, parse_string
@@ -27,5 +28,8 @@ def get_subarrays():
 
 if __name__ == '__main__':
     app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run()
+    if environ.get('ENV') == 'HEROKU':
+        app.run(debug=False, host='0.0.0.0')
+    else:
+        app.run()
 

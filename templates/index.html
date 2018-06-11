@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src={{ url_for('static', filename='js/ajax.js') }}></script>
+    <title>Best match</title>
+</head>
+<body>
+<div id="wrapper">
+    <div class="Form_centered">
+        <form id="subarrays_form">
+            <input type="text" name="numbers_input" class="Form-numbers-text"
+                   placeholder="enter comma-separated numbers, e.g. '15, 6, 27'"
+                   pattern="[0-9, ]+[0-9]+" title = "only comma-separated numbers are valid, e.g. 15, 12, 22">
+            <input type="text" name="target_input" class="Form-target-text"
+                   placeholder="40"
+                   pattern="[0-9]+" title="only whole numbers are valid">
+            <input type="submit" class="Form-submit_display_none">
+            <label id="hidden"></label>
+        </form>
+    </div>
+    <div class="Result Result_centered">
+
+    </div>
+</div>
+</body>
+</html>

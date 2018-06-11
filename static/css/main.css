@@ -1,0 +1,19 @@
+.Form_centered{
+    text-align: center;
+    margin-top: 50px;
+}
+.Form-submit_display_none {
+    display: none;
+}
+.Form-target-text
+{
+    width: 20px;
+}
+
+.Form-numbers-text{
+    width:500px;
+}
+.Result_centered{
+    text-align: center;
+}
+

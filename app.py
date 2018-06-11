@@ -29,7 +29,8 @@ def get_subarrays():
 if __name__ == '__main__':
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     if environ.get('ENV') == 'HEROKU':
-        app.run(debug=False, host='0.0.0.0')
+        port = int(environ.get('PORT', 33507))
+        app.run(debug=False, host='0.0.0.0', port=port)
     else:
         app.run()
 

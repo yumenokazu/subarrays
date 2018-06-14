@@ -26,11 +26,15 @@ def get_subarrays():
     except ValueError as e:
         return jsonify({'status': 'fail', 'data': e})
 
-if __name__ == '__main__':
+
+def create_app():
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     if environ.get('ENV') == 'HEROKU':
-        port = int(environ.get('PORT', 33507))
-        app.run(debug=False, host='0.0.0.0', port=port)
+        app.run(debug=False)
     else:
         app.run()
+
+
+if __name__ == '__main__':
+    create_app()
 
